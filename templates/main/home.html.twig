@@ -1,0 +1,47 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    coucou
+{% endblock %}
+
+{% block header %}
+
+
+    <img id="a" src="{{ asset('image/logo-512 (1).png') }}">
+    <h1 id="b">CHICKEN BUCKET</h1>
+
+{% endblock %}
+
+{% block body %}
+
+    <main>
+        <h1>HOME</h1>
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="flash-{{ label }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+
+        {{ form_start(monFormulaire) }}
+        {{ form_widget(monFormulaire) }}
+        <button>Envoyer</button>
+        {{ form_end(monFormulaire) }}
+
+
+
+    {#   {% if chienVegetariens %}
+            {% for chien in chienVegetariens %}
+                <p>{{ chien.nom }}</p>
+            {% endfor %}
+        {% endif %} #}
+    </main>
+{% endblock %}
+
+{% block footer %}
+    <div>
+        <p>@Bucket-Lis - {{ "now"|date("d/m/Y") }}</p>
+    </div>
+{% endblock %}

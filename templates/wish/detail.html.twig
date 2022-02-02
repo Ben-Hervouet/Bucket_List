@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+{% block header %}
+
+
+    <img id="a" src="{{ asset('image/logo-512 (1).png') }}">
+    <h1 id="b">CHICKEN BUCKET</h1>
+
+{% endblock %}
+{% block title %}
+    detail
+{% endblock %}
+
+{% block body %}
+
+<main>
+    <h1>DETAIL</h1>
+    <h2>{{ wish.title }}</h2>
+    <p>Description : {{wish.description}}</p>
+    <p>Category : {{ wish.category }}</p>
+</main>
+{% endblock %}
+
+{% block footer %}
+    <div>
+        <p>@Bucket-Lis - {{ "now"|date("d/m/Y") }}</p>
+    </div>
+{% endblock %}

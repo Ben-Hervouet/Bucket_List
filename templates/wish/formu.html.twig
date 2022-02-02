@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block header %}
+    <img id="a" src="{{ asset('image/logo-512 (1).png') }}">
+    <h1 id="b">CHICKEN BUCKET</h1>
+{% endblock %}
+
+
+{% block body %}
+
+    <main>
+        <h1>FORMULAIRE</h1>
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="flash-{{ label }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+
+        {{ form_start(monFormulaire1) }}
+        {{ form_widget(monFormulaire1) }}
+        <button>Envoyer</button>
+        {{ form_end(monFormulaire1) }}
+    </main>
+{% endblock %}
+
+{% block footer %}
+    <div>
+        <p>@Bucket-Lis - {{ "now"|date("d/m/Y") }}</p>
+    </div>
+{% endblock %}

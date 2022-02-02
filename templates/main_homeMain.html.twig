@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <link rel="stylesheet" href="{{ asset('css/stylesHome.css') }}">
+    <link rel="icon" href="{{ asset('image/favicon.png') }}">
+    <srypte src="{{ asset('js/index.js') }}"></srypte>
+    {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+
+</head>
+
+<body>
+<div class="Menu">
+    <ul class="Menu-list" data-offset="10">
+        <li class="Menu-list-item" data-offset="20" onclick>
+            Home
+            <span class="Mask"><span> <a href="{{ path('main_home') }}">Home</a></span></span>
+            <span class="Mask"><span> <a href="{{ path('main_home') }}">Home</a></span></span>
+        </li>
+        <li class="Menu-list-item" data-offset="16" onclick>
+            About
+            <span class="Mask"><span><a href="{{ path('main_Aboutus') }}">About</a></span></span>
+            <span class="Mask"><span><a href="{{ path('main_Aboutus') }}">About</a></span></span>
+        </li>
+        <li class="Menu-list-item" data-offset="12" onclick>
+            Work
+            <span class="Mask"><span><a href="{{ path('wish_list') }}">idée</a></span></span>
+            <span class="Mask"><span><a href="{{ path('wish_list') }}">idée</a></span></span>
+        </li>
+        <li class="Menu-list-item" data-offset="8" onclick>
+            Contact
+            <span class="Mask"><span><a href="{{ path('wish_formu') }}">Formulaire</a></span></span>
+            <span class="Mask"><span><a href="{{ path('wish_formu') }}">Formulaire</a></span></span>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

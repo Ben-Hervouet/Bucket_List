@@ -1,0 +1,43 @@
+
+img{
+    height: 50px;
+    width: 50px;
+}
+
+body{
+    text-align: center;
+    display: grid;
+    grid-template: "heade heade"
+                    "main main"
+                    "foote foote";
+    background-color:   #1f1b4e;
+
+}
+
+
+header{
+    grid-area: heade;
+    text-align: center;
+
+}
+
+#nav{
+    grid-area: nav;
+    text-align: center;
+
+}
+
+main{
+    grid-area: main;
+    text-align: center;
+}
+
+
+footer{
+    grid-area: foote;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+
+}
