@@ -14,9 +14,16 @@
 
 <main>
     <h1>DETAIL</h1>
-    <h2>{{ wish.title }}</h2>
-    <p>Description : {{wish.description}}</p>
-    <p>Category : {{ wish.category }}</p>
+    <div class="cards">
+        <h2>{{ wish.title }}</h2>
+    <p>{{wish.description}}</p>
+    <p>{{ wish.category }}</p>
+        {% set img = wish.nomImage %}
+    {% if img == true %}
+    <img  class="card-img" style="height: 200px; width: 200px"  src="{{ asset('images/wishes/' ~ wish.nomImage) }}" alt="">
+        {% endif %}
+    </div>
+
 </main>
 {% endblock %}
 

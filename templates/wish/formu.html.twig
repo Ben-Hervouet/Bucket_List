@@ -9,6 +9,7 @@
 {% block body %}
 
     <main>
+        <div class="cards">
         <h1>FORMULAIRE</h1>
         {% for label, messages in app.flashes %}
             {% for message in messages %}
@@ -22,6 +23,7 @@
         {{ form_widget(monFormulaire1) }}
         <button>Envoyer</button>
         {{ form_end(monFormulaire1) }}
+        </div>
     </main>
 {% endblock %}
 

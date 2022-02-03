@@ -8,6 +8,7 @@
 
 {% block body %}
     <main>
+        <div class="cards">
 <form method="post">
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -21,10 +22,10 @@
 
     <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
     <label for="inputUsername">Username</label>
-    <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control" autocomplete="username" required autofocus>
+    <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control" autocomplete="username" required autofocus><br>
     <label for="inputPassword">Password</label>
     <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
-
+    <br>
     <input type="hidden" name="_csrf_token"
            value="{{ csrf_token('authenticate') }}"
     >
@@ -45,6 +46,8 @@
     </button>
     <a href="{{ path('app_forgot_password_request') }}">Rénitialiser son mot de passe</a>
 </form>
+            <a href="{{ path('app_register') }}">crée un compte</a>
+        </div>
     </main>
 {% endblock %}
 {% block footer %}

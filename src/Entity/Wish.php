@@ -4,8 +4,17 @@ namespace App\Entity;
 
 use App\Repository\WishRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use symfony\Component\Validator\Constraints as Assert;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
+/**
+ * @Vich\Uploadable
+ *
+ */
 #[ORM\Entity(repositoryClass: WishRepository::class)]
+
 class Wish
 {
     #[ORM\Id]
@@ -31,6 +40,15 @@ class Wish
     #[ORM\ManyToOne(targetEntity: Category::class, inversedBy: 'wishes')]
     #[ORM\JoinColumn(nullable: false)]
     private $category;
+
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private $nomImage;
+
+    /**
+     * @Vich\UploadableField(mapping="wish_image", fileNameProperty="nomImage")
+     * @param File|UploadedFile|null $fichierImage
+     */
+    private $fichierImage;
 
 
 
@@ -113,6 +131,34 @@ class Wish
         $this->category = $category;
 
         return $this;
+    }
+
+    public function getNomImage(): ?string
+    {
+        return $this->nomImage;
+    }
+
+    public function setNomImage(?string $nomImage): self
+    {
+        $this->nomImage = $nomImage;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFichierImage()
+    {
+        return $this->fichierImage;
+    }
+
+        public function setFichierImage(?File $fichierImage): self
+    {
+        $this->fichierImage = $fichierImage;
+
+        return $this;
+
     }
 
 }

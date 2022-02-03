@@ -30,6 +30,7 @@ header{
 main{
     grid-area: main;
     text-align: center;
+    color: #ecf0f1;
 }
 
 
@@ -40,4 +41,20 @@ footer{
     width: 100%;
     position: fixed;
 
+}
+.cards{
+    margin: 27px auto 0;
+    position: relative;
+    width: 450px;
+    height: 500px;
+    background-color: #34495e;
+    color: #ecf0f1;
+    border-radius: 8px;
+    text-align: center;
+
+}
+.card-img{
+    position: relative;
+    width: 200px;
+    height: 200px;
 }

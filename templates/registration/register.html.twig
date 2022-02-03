@@ -1,8 +1,13 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Register{% endblock %}
-
+{% block header %}
+<img id="a" src="{{ asset('image/logo-512 (1).png') }}">
+<h1 id="b">CHICKEN BUCKET</h1>
+{% endblock %}
 {% block body %}
+    <main>
+    <div class="cards">
     <h1>Register</h1>
 
     {{ form_start(registrationForm) }}
@@ -14,4 +19,11 @@
 
         <button type="submit" class="btn">Register</button>
     {{ form_end(registrationForm) }}
+    </div>
+    </main>
+{% endblock %}
+{% block footer %}
+    <div>
+        <p>@Bucket-Lis - {{ "now"|date("d/m/Y") }}</p>
+    </div>
 {% endblock %}
